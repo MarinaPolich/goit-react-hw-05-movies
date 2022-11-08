@@ -13,6 +13,7 @@ import {
   GoBackBtn,
 } from './MovieDetails.styled';
 import { Loader } from '../../components/Loader/Loader';
+import image from '../../images/images.jpeg';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -49,7 +50,11 @@ const MovieDetails = () => {
       </GoBackBtn>
       <Box>
         <Image
-          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w300${poster_path}`
+              : image
+          }
           alt={title}
         />
         <div>
